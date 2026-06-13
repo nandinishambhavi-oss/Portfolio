@@ -1,128 +1,109 @@
-@'
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nandini Shambhavi | Portfolio</title>
+  <title>Shambhavi Nandini | Project Manager</title>
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Inter, Segoe UI, sans-serif; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Inter, "Segoe UI", sans-serif; }
+    html { scroll-behavior: smooth; }
     body {
-      min-height: 100vh;
-      background: radial-gradient(circle at top left, #7c3aed, transparent 35%),
-                  radial-gradient(circle at bottom right, #06b6d4, transparent 35%),
+      background: radial-gradient(circle at top left, rgba(124,58,237,.35), transparent 35%),
+                  radial-gradient(circle at bottom right, rgba(6,182,212,.30), transparent 35%),
                   #050816;
-      color: white;
+      color: #fff;
       overflow-x: hidden;
     }
-    .trail {
-      position: fixed;
-      width: 10px;
-      height: 10px;
-      background: #22d3ee;
-      border-radius: 50%;
-      pointer-events: none;
-      box-shadow: 0 0 20px #22d3ee;
-      animation: fade 0.7s linear forwards;
-      z-index: 9999;
-    }
-    @keyframes fade {
-      to { transform: scale(3); opacity: 0; }
-    }
     nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 24px 8%;
-      position: sticky;
-      top: 0;
-      backdrop-filter: blur(14px);
-      background: rgba(5, 8, 22, 0.65);
-      z-index: 10;
+      position: sticky; top: 0; z-index: 10;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 22px 8%;
+      background: rgba(5,8,22,.75);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,.1);
     }
-    nav h2 { color: #22d3ee; }
-    nav a {
-      color: #cbd5e1;
-      margin-left: 24px;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    nav a:hover { color: white; }
+    nav h2 { color: #67e8f9; }
+    nav a { color: #cbd5e1; text-decoration: none; margin-left: 22px; font-weight: 600; }
+    nav a:hover { color: #fff; }
+
     .hero {
-      min-height: 85vh;
+      min-height: 90vh;
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 40px;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 42px;
       align-items: center;
-      padding: 70px 8%;
+      padding: 75px 8%;
     }
     .badge {
       display: inline-block;
-      padding: 8px 14px;
-      border: 1px solid rgba(255,255,255,.2);
+      padding: 9px 15px;
       border-radius: 999px;
       color: #67e8f9;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
       margin-bottom: 22px;
-      background: rgba(255,255,255,.06);
+      font-weight: 700;
     }
     h1 {
-      font-size: clamp(42px, 7vw, 82px);
-      line-height: 1;
-      margin-bottom: 22px;
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1.02;
+      margin-bottom: 24px;
     }
     h1 span {
       background: linear-gradient(90deg, #22d3ee, #a78bfa, #f472b6);
       -webkit-background-clip: text;
       color: transparent;
     }
-    .hero p {
-      color: #cbd5e1;
-      font-size: 19px;
-      line-height: 1.7;
-      max-width: 680px;
-    }
-    .actions { margin-top: 34px; display: flex; gap: 16px; flex-wrap: wrap; }
+    p { color: #cbd5e1; line-height: 1.75; }
+    .hero p { font-size: 19px; max-width: 760px; }
+
     .btn {
+      display: inline-block;
+      margin-top: 28px;
+      margin-right: 14px;
       padding: 14px 22px;
       border-radius: 14px;
       text-decoration: none;
-      color: white;
-      font-weight: 700;
+      color: #fff;
+      font-weight: 800;
       background: linear-gradient(135deg, #7c3aed, #06b6d4);
-      box-shadow: 0 12px 40px rgba(34,211,238,.25);
+      box-shadow: 0 12px 42px rgba(34,211,238,.25);
     }
     .btn.secondary {
       background: rgba(255,255,255,.08);
       border: 1px solid rgba(255,255,255,.18);
       box-shadow: none;
     }
-    .glass {
-      padding: 30px;
-      border-radius: 28px;
+
+    .glass, .card, .timeline-item {
       background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.16);
-      box-shadow: 0 25px 80px rgba(0,0,0,.35);
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 25px 80px rgba(0,0,0,.30);
     }
+    .glass { padding: 30px; border-radius: 28px; }
     .profile-card {
-      min-height: 420px;
+      min-height: 430px;
+      text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      text-align: center;
     }
     .avatar {
-      width: 150px;
-      height: 150px;
+      width: 150px; height: 150px;
       margin: 0 auto 24px;
       border-radius: 50%;
       background: linear-gradient(135deg, #22d3ee, #a78bfa, #f472b6);
       display: grid;
       place-items: center;
-      font-size: 54px;
-      font-weight: 800;
+      font-size: 52px;
+      font-weight: 900;
     }
+
     section { padding: 70px 8%; }
-    .section-title { font-size: 34px; margin-bottom: 28px; }
+    .section-title { font-size: 36px; margin-bottom: 14px; }
+    .section-subtitle { max-width: 900px; color: #94a3b8; margin-bottom: 30px; }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -131,121 +112,280 @@
     .card {
       padding: 26px;
       border-radius: 22px;
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.13);
       transition: .25s;
     }
-    .card:hover {
-      transform: translateY(-8px);
-      background: rgba(255,255,255,.11);
+    .card:hover { transform: translateY(-8px); background: rgba(255,255,255,.12); }
+    .card h3 { color: #67e8f9; margin-bottom: 12px; font-size: 21px; }
+    .stat h3 { font-size: 42px; color: #fff; }
+
+    .timeline { display: grid; gap: 22px; }
+    .timeline-item {
+      padding: 26px;
+      border-radius: 18px;
+      border-left: 4px solid #22d3ee;
     }
-    .card h3 { margin-bottom: 12px; color: #67e8f9; }
-    .card p { color: #cbd5e1; line-height: 1.6; }
+    .timeline-item span {
+      display: block;
+      color: #a78bfa;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
     .skills span {
       display: inline-block;
       margin: 8px;
       padding: 10px 14px;
       border-radius: 999px;
-      background: rgba(255,255,255,.1);
+      background: rgba(255,255,255,.10);
       border: 1px solid rgba(255,255,255,.14);
       color: #e2e8f0;
+      font-weight: 600;
     }
+
     footer {
       text-align: center;
-      padding: 30px;
+      padding: 34px;
       color: #94a3b8;
-      border-top: 1px solid rgba(255,255,255,.1);
+      border-top: 1px solid rgba(255,255,255,.10);
     }
-    @media (max-width: 850px) {
-      .hero { grid-template-columns: 1fr; }
+
+    .trail {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background: #22d3ee;
+      border-radius: 50%;
+      pointer-events: none;
+      box-shadow: 0 0 22px #22d3ee;
+      animation: fade .7s linear forwards;
+      z-index: 9999;
+    }
+    @keyframes fade { to { transform: scale(3.5); opacity: 0; } }
+
+    @media (max-width: 900px) {
       nav { flex-direction: column; gap: 14px; }
+      nav a { margin: 0 8px; }
+      .hero { grid-template-columns: 1fr; padding-top: 55px; }
     }
   </style>
 </head>
+
 <body>
   <nav>
-    <h2>Nandini</h2>
+    <h2>Shambhavi Nandini</h2>
     <div>
       <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
+      <a href="#impact">Impact</a>
+      <a href="#projects">Highlights</a>
+      <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
 
   <main class="hero">
     <div>
-      <div class="badge">Portfolio • GitHub Pages</div>
-      <h1>Hi, I am <span>Nandini Shambhavi</span></h1>
+      <div class="badge">Project Manager • Service Delivery Manager • IT Operations Manager</div>
+      <h1>Driving Enterprise <span>SAP & Cloud Delivery</span></h1>
       <p>
-        A clean, modern and interactive portfolio showcasing my profile,
-        work, skills and projects with a premium visual design.
+        Service delivery and IT operations leader with 12 years of experience across SAP ECS,
+        SAP HXM / SuccessFactors, cloud operations, enterprise support, SLA governance,
+        customer escalations, renewals, automation, and continuous improvement.
       </p>
-      <div class="actions">
-        <a class="btn" href="#projects">View Projects</a>
-        <a class="btn secondary" href="https://github.com/nandinishambhavi-oss" target="_blank">GitHub Profile</a>
-      </div>
+      <a class="btn" href="#projects">View Leadership Impact</a>
+      <a class="btn secondary" href="mailto:nandinishambhavi@gmail.com">Contact Me</a>
     </div>
 
     <div class="glass profile-card">
-      <div class="avatar">NS</div>
-      <h2>Nandini Shambhavi</h2>
-      <p style="margin-top:12px;color:#cbd5e1;">Developer • Learner • Creator</p>
+      <div class="avatar">SN</div>
+      <h2>Shambhavi Nandini</h2>
+      <p>Project Manager | Service Delivery Manager | SAP Cloud Services</p>
+      <p style="margin-top:18px;">Pune, India</p>
+      <p>nandinishambhavi@gmail.com</p>
+      <p>+91 9741699318</p>
     </div>
   </main>
+
+  <section id="impact">
+    <h2 class="section-title">Impact at a Glance</h2>
+    <p class="section-subtitle">Selected delivery outcomes across SAP ECS, SAP HXM, cloud operations and enterprise support.</p>
+
+    <div class="grid">
+      <div class="card stat"><h3>12+</h3><p>Years of IT operations and service delivery experience</p></div>
+      <div class="card stat"><h3>250+</h3><p>Resources managed across Incident, Event, SRF and Build teams</p></div>
+      <div class="card stat"><h3>20%</h3><p>MTTR improvement through dashboards, KB articles and backlog governance</p></div>
+      <div class="card stat"><h3>35%</h3><p>Operations efficiency and retention improvements through governance and mentoring</p></div>
+      <div class="card stat"><h3>500+</h3><p>Changes and weekly releases governed across datacenters</p></div>
+      <div class="card stat"><h3>90%+</h3><p>Customer satisfaction in technical service desk and enterprise support roles</p></div>
+    </div>
+  </section>
 
   <section id="about">
     <h2 class="section-title">About Me</h2>
     <div class="glass">
-      <p style="color:#cbd5e1;line-height:1.8;font-size:18px;">
-        I enjoy building clean, useful and visually appealing digital experiences.
-        This portfolio is designed to highlight my work in a simple but professional way.
+      <p style="font-size:18px;">
+        Hello, I am <strong>Shambhavi Nandini</strong>, a Project Manager and Service Delivery
+        professional with 12 years of experience in SAP cloud services, SAP HXM / SuccessFactors,
+        ITSM operations and enterprise customer support.
+        <br><br>
+        I specialize in managing SLA-driven delivery, stabilizing incident, event, service request and build
+        operations, leading large teams, handling customer escalations, improving delivery health and creating
+        measurable service outcomes.
+        <br><br>
+        My strength lies in disciplined governance, stakeholder confidence, risk control, operational reviews,
+        resource planning, automation opportunities and continuous improvement. I have worked across SAP ECS,
+        SAP HXM, SAP Basis operations, Linux, Azure, AWS, GCP exposure, monitoring and cloud operations.
       </p>
     </div>
   </section>
 
   <section id="projects">
-    <h2 class="section-title">Featured Projects</h2>
+    <h2 class="section-title">Leadership & Delivery Highlights</h2>
+    <p class="section-subtitle">Key initiatives that reflect service ownership, project governance, client delivery and operational transformation.</p>
+
     <div class="grid">
       <div class="card">
-        <h3>Personal Portfolio</h3>
-        <p>A responsive GitHub Pages portfolio with modern UI, animations and interactive cursor effect.</p>
+        <h3>SAP ECS Delivery Governance</h3>
+        <p>Managed SAP ECS delivery across Incident and Event Management, Service Request Fulfillment and Build verticals for 250+ resources while maintaining Green RAG and SLA stability.</p>
       </div>
       <div class="card">
-        <h3>Web Projects</h3>
-        <p>Frontend-focused web pages with clean layout, mobile support and user-friendly design.</p>
+        <h3>MTTR Improvement Program</h3>
+        <p>Improved MTTR by 20% through proactive ticket analysis, Jira dashboards, knowledge articles, Epic/backlog workflows and structured governance.</p>
       </div>
       <div class="card">
-        <h3>Learning Projects</h3>
-        <p>Small practical projects created to improve coding, design and deployment skills.</p>
+        <h3>Zero Escalation Build Operations</h3>
+        <p>Maintained more than one year of zero escalation in Build operations through governance discipline, structured risk reviews and delivery transparency.</p>
+      </div>
+      <div class="card">
+        <h3>Customer Success & CSAT Growth</h3>
+        <p>Improved CSAT by 20% by designing proactive service plans and strengthening customer confidence after renewal activities.</p>
+      </div>
+      <div class="card">
+        <h3>ECS Renewal & Service Expansion</h3>
+        <p>Supported ECS contract renewal and service expansion through requirement gathering, billing simulations, onsite workshops, backlog reduction and operational readiness.</p>
+      </div>
+      <div class="card">
+        <h3>SAP HXM Production Operations</h3>
+        <p>Built and led a 30+ member Production Operations team supporting SAP HXM / SuccessFactors, improving retention by more than 35% through mentoring and skill programs.</p>
+      </div>
+      <div class="card">
+        <h3>Change & Release Governance</h3>
+        <p>Managed impact and risk assessment for 500+ changes and weekly releases across datacenters to protect contractual obligations and performance metrics.</p>
+      </div>
+      <div class="card">
+        <h3>ITSM Process Improvement</h3>
+        <p>Standardized client reporting, SLA tracking, KPI governance, escalation routines, RCA, service transition, release coordination and knowledge management.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2 class="section-title">Professional Experience</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <span>Jun 2022 - Present</span>
+        <h3>Cloud Service Operations Associate Manager - SAP ECS</h3>
+        <p>Accenture Solutions Pvt. Ltd., Pune. Own end-to-end client delivery for SAP ECS accounts, including operations governance, SLA adherence, customer lifecycle management, strategic reviews, risk management, disaster recovery drill coordination and high availability planning.</p>
+      </div>
+
+      <div class="timeline-item">
+        <span>Dec 2020 - May 2022</span>
+        <h3>IT Operations Escalation Lead - SAP HXM</h3>
+        <p>Accenture Solutions Pvt. Ltd., Bengaluru. Built and led a 30+ member Production Operations team, standardized client reporting, SLA tracking and KPI governance, strengthened escalation management and converted repetitive work into automation opportunities.</p>
+      </div>
+
+      <div class="timeline-item">
+        <span>Sep 2017 - Nov 2020</span>
+        <h3>IT Operations Analyst / Senior Analyst - SAP HXM</h3>
+        <p>Managed SAP SuccessFactors HXM Suite configuration support, incident triage, partner delivery coordination, customer service outcomes, Focus150 escalation guidelines, vendor relationships and transition from ManageEngine to ServiceNow.</p>
+      </div>
+
+      <div class="timeline-item">
+        <span>Dec 2015 - Aug 2017</span>
+        <h3>IT Operations Associate - SAP HXM Integration</h3>
+        <p>Supported SAP SuccessFactors partner delivery, HCM product support, configuration activities, RMK site design, regional queue management and incident triage while maintaining SLA stability.</p>
+      </div>
+
+      <div class="timeline-item">
+        <span>Jul 2014 - Nov 2015</span>
+        <h3>Technical Service Desk Engineer</h3>
+        <p>Hewlett Packard for Adecco India, Bengaluru. Supported offshore desktop operations and application maintenance for the E.ON program across users in 30 countries using RDP and Cisco AnyConnect, sustaining more than 90% customer satisfaction.</p>
       </div>
     </div>
   </section>
 
   <section id="skills">
-    <h2 class="section-title">Skills</h2>
+    <h2 class="section-title">Core Strengths & Tools</h2>
     <div class="glass skills">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-      <span>GitHub Pages</span>
-      <span>Responsive Design</span>
-      <span>UI Design</span>
+      <span>Service Delivery Management</span>
+      <span>Project Governance</span>
+      <span>SLA / KPI Management</span>
+      <span>Risk & Issue Management</span>
+      <span>Stakeholder Reporting</span>
+      <span>Operational Reviews</span>
+      <span>Resource Planning</span>
+      <span>Incident Management</span>
+      <span>Event Management</span>
+      <span>Change Management</span>
+      <span>Service Request Management</span>
+      <span>Escalation Management</span>
+      <span>RCA</span>
+      <span>Disaster Recovery Drills</span>
+      <span>Release Coordination</span>
+      <span>Knowledge Management</span>
+      <span>Service Transition</span>
+      <span>SAP ECS</span>
+      <span>SAP HXM / SuccessFactors</span>
+      <span>SAP Basis Operations</span>
+      <span>Linux</span>
+      <span>Azure</span>
+      <span>AWS</span>
+      <span>GCP Exposure</span>
+      <span>Monitoring & Cloud Operations</span>
+      <span>ServiceNow</span>
+      <span>HPSM</span>
+      <span>ManageEngine</span>
+      <span>Jira</span>
+      <span>Splunk</span>
+      <span>Slack</span>
+      <span>Microsoft 365</span>
+      <span>Power BI</span>
+      <span>Excel Dashboards</span>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <h2 class="section-title">Certifications, Awards & Education</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Certifications</h3>
+        <p>Project Management Foundation School, Agile and Project Management, Microsoft Azure Fundamentals AZ-900, Agile and Scrum Master, ITIL 4 Foundation, SIAM.</p>
+      </div>
+      <div class="card">
+        <h3>Awards</h3>
+        <p>Core Values Award 2025, ACE Award - Extra Mile 2025, ACE Award - Client and Customer Category 2025, Change Catalyst Award Q3 2021.</p>
+      </div>
+      <div class="card">
+        <h3>Education</h3>
+        <p>B.Tech in Electronics and Communications Engineering from Visvesvaraya Technological University, Bengaluru, 2010 - 2014.</p>
+      </div>
     </div>
   </section>
 
   <section id="contact">
     <h2 class="section-title">Contact</h2>
     <div class="glass">
-      <p style="color:#cbd5e1;font-size:18px;">Email: nandinishambhavi@gmail.com</p>
-      <p style="margin-top:10px;">
-        <a class="btn" href="mailto:nandinishambhavi@gmail.com">Send Email</a>
+      <p style="font-size:18px;">
+        Open to Project Manager, Service Delivery Manager, IT Operations Manager and SAP Cloud Services leadership roles.
       </p>
+      <a class="btn" href="mailto:nandinishambhavi@gmail.com">Send Email</a>
+      <a class="btn secondary" href="https://github.com/nandinishambhavi-oss" target="_blank">GitHub Profile</a>
     </div>
   </section>
 
   <footer>
-    © 2026 Nandini Shambhavi. Built with GitHub Pages.
+    © 2026 Shambhavi Nandini. Built with GitHub Pages.
   </footer>
 
   <script>
@@ -260,4 +400,3 @@
   </script>
 </body>
 </html>
-'@ | Set-Content -Encoding UTF8 index.html
