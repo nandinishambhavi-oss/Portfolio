@@ -1,0 +1,11 @@
+*.pdf binary
+*.docx binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+
+*.md text eol=lf
+*.yml text eol=lf
+*.scss text eol=lf
+Gemfile text eol=lf

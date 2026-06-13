@@ -1,0 +1,157 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+:root {
+  --ink: #1f2d2b;
+  --muted: #66736f;
+  --accent: #0f766e;
+  --accent-dark: #115e59;
+  --line: #dce7e2;
+  --soft: #f6fbf8;
+  --gold: #c79b37;
+}
+
+body {
+  color: var(--ink);
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbf8 45%, #ffffff 100%);
+}
+
+a {
+  color: var(--accent-dark);
+}
+
+header p {
+  color: var(--muted);
+}
+
+.wrapper {
+  max-width: 1040px;
+}
+
+section {
+  margin: 18px 0;
+}
+
+.hero {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 26px;
+  background:
+    linear-gradient(135deg, rgba(15, 118, 110, 0.09), rgba(199, 155, 55, 0.10)),
+    #ffffff;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-size: 34px;
+  line-height: 1.05;
+}
+
+.headline {
+  max-width: 760px;
+  color: #344541;
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.button {
+  display: inline-block;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.button.primary {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.metric-grid,
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.capability-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.metric,
+.capability-grid > div {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  background: #ffffff;
+}
+
+.metric strong {
+  display: block;
+  color: var(--accent-dark);
+  font-size: 25px;
+  line-height: 1;
+}
+
+.metric span {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.capability-grid h3 {
+  margin-top: 0;
+  color: var(--accent-dark);
+}
+
+main h2 {
+  margin-top: 28px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+}
+
+main h3 {
+  color: var(--accent-dark);
+}
+
+main ul {
+  padding-left: 22px;
+}
+
+@media screen and (max-width: 760px) {
+  .hero {
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .metric-grid,
+  .capability-grid {
+    grid-template-columns: 1fr;
+  }
+}
