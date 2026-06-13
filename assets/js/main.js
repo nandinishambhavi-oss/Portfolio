@@ -14,3 +14,12 @@ if (navToggle && navLinks) {
     }
   });
 }
+
+document.addEventListener("mousemove", (event) => {
+  const dot = document.createElement("div");
+  dot.className = "trail";
+  dot.style.left = `${event.clientX}px`;
+  dot.style.top = `${event.clientY}px`;
+  document.body.appendChild(dot);
+  window.setTimeout(() => dot.remove(), 700);
+});
